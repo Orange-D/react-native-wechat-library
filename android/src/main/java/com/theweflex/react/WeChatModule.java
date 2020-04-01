@@ -272,31 +272,6 @@ public class WeChatModule extends ReactContextBaseJavaModule implements IWXAPIEv
             fs = new FileInputStream(path);
             Bitmap bmp  = BitmapFactory.decodeStream(fs);
 
-//            if (maxWidth > 0) {
-//                bmp = Bitmap.createScaledBitmap(bmp, maxWidth, bmp.getHeight() / bmp.getWidth() * maxWidth, true);
-//            }
-
-//            File f = Environment.getExternalStoragePublicDirectory(SDCARD_ROOT + "/react-native-wechat-lib");
-//            String fileName = "wechat-share.jpg";
-//            String tempPath = SDCARD_ROOT + "/react-native-wechat-lib";
-//            File file = new File(f, fileName);
-//            try {
-//                FileOutputStream fos = new FileOutputStream(file);
-//                bmp.compress(Bitmap.CompressFormat.JPEG, 100, fos);
-//                fos.flush();
-//                fos.close();
-//            } catch (FileNotFoundException e) {
-//                e.printStackTrace();
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-
-//            int size = bmp.getByteCount();
-//            ByteArrayOutputStream var2 = new ByteArrayOutputStream();
-//            bmp.compress(Bitmap.CompressFormat.JPEG, 85, var2);
-//            int size2 = var2.toByteArray().length;
-            // 初始化 WXImageObject 和 WXMediaMessage 对象
-
             WXImageObject imgObj = new WXImageObject(bmp);
             WXMediaMessage msg = new WXMediaMessage();
             msg.mediaObject = imgObj;
@@ -446,6 +421,8 @@ public class WeChatModule extends ReactContextBaseJavaModule implements IWXAPIEv
             callback.invoke(null, api.sendReq(req));
         }
     }
+
+
 
     /**
      * 分享小程序

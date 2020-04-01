@@ -1,39 +1,19 @@
 <img height="200" src="./weixin.png?raw=true">
 
-# React-Native-Wechat-Lib
+# React-Native-Wechat-Library
 
 [React Native] bridging library that integrates WeChat SDKs:
 
 - [x] iOS SDK 1.8.6.1
 - [x] Android SDK 5.5.6
 
-## 前言
-
 首先向各位声明，本库是在 [react-native-wechat](https://github.com/yorkie/react-native-wechat) 基础上进行重写。  
-
-本库已经向 react-native-wechat 提交合并请求[#526](https://github.com/yorkie/react-native-wechat/pull/526)，但由于 react-native-wechat 所使用的 WeChat SDK 已经是几年前的版本，新 SDK 接口变动大，我修改的代码相当多，几乎重构了核心部分，导致合并需要耗费不小时间，再加上需要兼容正在使用旧版 SDK 的开发者，事情变得异常艰辛。
-
-考虑到自身使用和其它开发者的需要，最终决定开一个新仓库，提供给新项目使用。  
-
-最后，感谢 [yorkie](https://github.com/yorkie) 和各位开发者为 react-native-wechat 做出的贡献。
-
-## 目录
-
-- [安装](#安装)
-- [起步](#起步)
-- [API 文档](#API文档)
-
 ## 安装
 
 ```sh
-npm install react-native-wechat-lib --save
-react-native link react-native-wechat-lib
+npm install react-native-wechat-library --save
+react-native link react-native-wechat-library
 ```
-
-## 起步
-
-- [iOS 安装](./docs/build-setup-ios.md)
-- [Android 安装](./docs/build-setup-android.md)
 
 ## API文档
 
@@ -116,7 +96,7 @@ Return:
 
 
 ```js
-import * as WeChat from 'react-native-wechat-lib';
+import * as WeChat from 'react-native-wechat-library';
 
 WeChat.shareText({
   text: 'Text content.',
@@ -143,7 +123,7 @@ Return:
 
 
 ```js
-import * as WeChat from 'react-native-wechat-lib';
+import * as WeChat from 'react-native-wechat-library';
 
 WeChat.shareImage({
   imageUrl: 'https://google.com/1.jpg',
@@ -204,7 +184,7 @@ Return:
 
 
 ```js
-import * as WeChat from 'react-native-wechat-lib';
+import * as WeChat from 'react-native-wechat-library';
 
 WeChat.shareMusic({
   title: 'Good music.',

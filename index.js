@@ -440,6 +440,61 @@ export function pay(data) {
   });
 }
 
+
+
+/**
+ * Share something to a friend or group
+ * @method shareToSession
+ * @param {Object} data
+ * @param {String} data.thumbImage - Thumb image of the message, which can be a uri or a resource id.
+ * @param {String} data.type - Type of this message. Could be {news|text|imageUrl|imageFile|imageResource|video|audio|file}
+ * @param {String} data.webpageUrl - Required if type equals news. The webpage link to share.
+ * @param {String} data.imageUrl - Provide a remote image if type equals image.
+ * @param {String} data.videoUrl - Provide a remote video if type equals video.
+ * @param {String} data.musicUrl - Provide a remote music if type equals audio.
+ * @param {String} data.filePath - Provide a local file if type equals file.
+ * @param {String} data.fileExtension - Provide the file type if type equals file.
+ */
+export function shareToSession(data) {
+  return new Promise((resolve, reject) => {
+    nativeShareToSession(data);
+    emitter.once('SendMessageToWX.Resp', resp => {
+      if (resp.errCode === 0) {
+        resolve(resp);
+      } else {
+        reject(new WechatError(resp));
+      }
+    });
+  });
+}
+
+
+/**
+ * Share something to timeline/moments/朋友圈
+ * @method shareToTimeline
+ * @param {Object} data
+ * @param {String} data.thumbImage - Thumb image of the message, which can be a uri or a resource id.
+ * @param {String} data.type - Type of this message. Could be {news|text|imageUrl|imageFile|imageResource|video|audio|file}
+ * @param {String} data.webpageUrl - Required if type equals news. The webpage link to share.
+ * @param {String} data.imageUrl - Provide a remote image if type equals image.
+ * @param {String} data.videoUrl - Provide a remote video if type equals video.
+ * @param {String} data.musicUrl - Provide a remote music if type equals audio.
+ * @param {String} data.filePath - Provide a local file if type equals file.
+ * @param {String} data.fileExtension - Provide the file type if type equals file.
+ */
+export function shareToTimeline(data) {
+  return new Promise((resolve, reject) => {
+    nativeShareToTimeline(data);
+    emitter.once('SendMessageToWX.Resp', resp => {
+      if (resp.errCode === 0) {
+        resolve(resp);
+      } else {
+        reject(new WechatError(resp));
+      }
+    });
+  });
+}
+
 /**
  * promises will reject with this error when API call finish with an errCode other than zero.
  */
