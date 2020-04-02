@@ -23,11 +23,11 @@
   "peerDependencies": {
     "react-native": ">=0.40"
   },
-  "author": "little-snow-fox <fox@sfxh.cc>",
+  "author": "orange-d <hope.910602@gmail.com>",
   "contributors": [
     {
-      "name": "little-snow-fox",
-      "email": "fox@sfxh.cc"
+      "name": "orange-d",
+      "email": "hope.910602@gmail.com"
     }
   ],
   "license": "MIT",
